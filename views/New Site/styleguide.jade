@@ -1,0 +1,469 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    // PAGE settings
+    link(rel='icon', href='https://templates.pingendo.com/assets/Pingendo_favicon.ico')
+    title Styleguide
+    meta(name='author', content='Pingendo')
+    // CSS dependencies
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css', type='text/css')
+    link(rel='stylesheet', href='aquamarine.css', type='text/css')
+  body
+    .py-5.text-center
+      .container
+        .row
+          .col-12
+            h1.display-3.text-capitalize aquamarine style guide
+            p.lead.text-muted Components designed to fit nicely together
+    .py-4
+      .container
+        .row
+          .col-12
+            h2 Color palette
+            hr
+            .row.text-center
+              .col-md-2.bg-primary.m-2
+                p.m-0.p-4 Primary
+              .col-md-2.bg-secondary.m-2
+                p.m-0.p-4 Secondary
+              .col-md-2.bg-info.m-2
+                p.m-0.p-4 Info
+              .col-md-2.bg-light.m-2
+                p.m-0.p-4 Light
+              .col-md-2.bg-dark.m-2
+                p.m-0.p-4 Dark
+    .py-4
+      .container
+        .row
+          .col-12
+            h2 Typography
+            hr
+            h1.display-4  Display
+            h1 Heading
+            p.lead Lead paragraph
+            p
+              | Paragraph. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              br
+              i Italic. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              br
+              b Bold. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            .blockquote
+              p.mb-0 Blockquoute
+              .blockquote-footer
+                | Someone famous in
+                cite My memories
+    .py-4
+      .container
+        .row
+          .col-12
+            h2 Buttons
+            hr
+        .row
+          .col-12
+            a.btn.btn-primary.m-2(href='#') Primary
+            a.btn.btn-secondary.m-2(href='#') Secondary
+            a.btn.btn-info.m-2(href='#') Info
+            a.btn.btn-light.m-2(href='#') Light
+            a.btn.btn-dark.m-2(href='#') Dark
+            a.btn.btn-link.m-2(href='#') Link
+        .row
+          .col-12
+            a.btn.btn-outline-primary.m-2(href='#') Primary
+            a.btn.btn-outline-secondary.m-2(href='#') Secondary
+            a.btn.btn-outline-info.m-2(href='#') Info
+            a.btn.btn-outline-light.m-2(href='#') Light
+            a.btn.btn-outline-dark.m-2(href='#') Dark
+        .row
+          .col-12
+            a.btn.btn-primary.m-2(href='', aria-pressed='false', autocomplete='off', data-toggle='button') Toggle
+            .btn-group.m-2
+              a.btn.btn-primary(href='#') Btn 1
+              a.btn.btn-primary(href='#') Btn 2
+              a.btn.btn-primary(href='#') Btn 3
+            .btn-group.m-2
+              button.btn.btn-primary.dropdown-toggle(data-toggle='dropdown') Dropdown
+              .dropdown-menu
+                h6.dropdown-header Dropdown header
+                a.dropdown-item(href='#') Option 1
+                a.dropdown-item(href='#') Option 2
+                a.dropdown-item.disabled(href='#') Disabled option
+                .dropdown-divider
+                a.dropdown-item(href='#') Separated link
+            .btn-group.m-2
+              button.btn.btn-primary(type='button', href='#') Split dropdown
+              button.btn.dropdown-toggle.dropdown-toggle-split.btn-primary(type='button', data-toggle='dropdown', aria-expanded='false', aria-haspopup='true')
+              .dropdown-menu
+                a.dropdown-item(href='#') Action
+                a.dropdown-item(href='#') Another action
+                a.dropdown-item(href='#') Something else here
+                .dropdown-divider
+                a.dropdown-item(href='#') Separated link
+        .row
+          .col-12
+            a.btn.btn-primary.m-2(href='')
+              | Badge
+              span.badge.badge-secondary.ml-1 New!
+            a.btn.btn-primary.m-2(href='#')
+              i.fa.fa-user.fa-fw
+              | Icon
+            a.btn.active.btn-primary.m-2(href='') Active
+            a.btn.disabled.btn-primary.m-2(href='') Disabled
+            a.btn.btn-sm.btn-primary.m-2(href='') Small
+            a.btn.btn-primary.m-2(href='') Regular
+            a.btn.btn-lg.btn-primary.m-2(href='') Large
+    .py-4
+      .container
+        .row
+          .col-12
+            h2 Navs and components
+            hr
+        .row
+          .col-md-6
+            ul.nav
+              li.nav-item
+                a.nav-link(href='#') Item
+              li.nav-item
+                a.nav-link(href='#') Item
+              li.nav-item
+                a.nav-link(href='#') Item
+              li.nav-item
+                a.nav-link.disabled(href='#') Disabled
+            ul.nav.nav-pills.my-4
+              li.nav-item
+                a.nav-link.active(href='#') Nav pills
+              li.nav-item
+                a.nav-link(href='#')
+                  i.fa.fa-lg.fa-child
+                  |  Item
+              li.nav-item
+                a.nav-link(href='#')
+                  i.fa.fa-lg.fa-anchor.mt-1
+              li.nav-item.dropdown
+                a.nav-link.dropdown-toggle(data-toggle='dropdown', href='#', role='button', aria-haspopup='true', aria-expanded='false') Dropdown
+                .dropdown-menu
+                  a.dropdown-item(href='#') Option 1
+                  a.dropdown-item(href='#') Option 2
+                  .dropdown-divider
+                  a.dropdown-item(href='#') Separated link
+            ul.nav.nav-tabs
+              li.nav-item
+                a#home-tab.nav-link.active(href='#home', aria-controls='home', aria-selected='true', data-toggle='tab', role='tab') Home
+              li.nav-item
+                a#profile-tab.nav-link(href='#profile', aria-controls='profile', aria-selected='false', data-toggle='tab', role='tab') Profile
+              li.nav-item
+                a#contact-tab.nav-link(href='#contact', aria-controls='contact', aria-selected='false', data-toggle='tab', role='tab')
+                  | Contact
+                  span.badge.badge-pill.badge-warning !
+            #myTabContent.tab-content.my-2
+              #home.tab-pane.fade.show.active(role='tabpanel', aria-labelledby='home-tab')
+                | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+              #profile.tab-pane.fade(role='tabpanel', aria-labelledby='profile-tab')
+                | Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+              #contact.tab-pane.fade(role='tabpanel', aria-labelledby='contact-tab')
+                | Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Consectetur adipiscing elit, sed do eiusmod tempor incididunt.
+          .col-md-6
+            ul.breadcrumb
+              li.breadcrumb-item
+                a(href='#') Home
+              li.breadcrumb-item
+                a(href='#') Parent
+              li.breadcrumb-item.active Page
+            ul.pagination
+              li.page-item
+                a.page-link(href='#', aria-label='Previous')
+                  span(aria-hidden='true') «
+                  span.sr-only Previous
+              li.page-item
+                a.page-link(href='#') 1
+              li.page-item
+                a.page-link(href='#') 2
+              li.page-item.active
+                a.page-link(href='#') 3
+              li.page-item.disabled
+                a.page-link(href='#') 4
+              li.page-item
+                a.page-link(href='#', aria-label='Next')
+                  span(aria-hidden='true') »
+                  span.sr-only Next
+            .progress.my-4
+              .progress-bar.progress-bar-striped(role='progressbar', style='width: 50%', aria-valuenow='50', aria-valuemin='0', aria-valuemax='100') 50%
+            .alert.alert-info(role='alert')
+              button.close(type='button', data-dismiss='alert', aria-label='Close') ×
+              h4.alert-heading Well done!
+              p.mb-0 This is an info panel.
+    .py-4
+      .container
+        .row
+          .col-12
+            h2 Forms
+            hr
+        .row
+          .col-md-6.p-3
+            form(method='post', action='')
+              .form-group.mb-1
+                input.form-control(type='email', name='email', placeholder='Enter email')
+              small#emailHelp.form-text.text-muted We'll never share your email with anyone else.
+              .form-group.my-3
+                select.form-control
+                  option(value='1') 1
+                  option(value='2') 2
+                  option(value='3') 3
+              .form-group.my-3
+                .input-group
+                  .input-group-prepend
+                    span#basic-addon1.input-group-text @
+                  input#inlineFormInputGroup.form-control(type='text', placeholder='Username')
+              .form-group.my-3
+                input#exampleFormControlFile1.form-control-file(type='file')
+              .form-check.form-check-inline
+                label.form-check-label
+                  input#inlineRadio1.form-check-input(type='radio', value='option1', name='inlineRadioOptions')
+                  |  1
+              .form-check.form-check-inline
+                label.form-check-label
+                  input#inlineRadio2.form-check-input(type='radio', value='option2', name='inlineRadioOptions')
+                  |  2
+              .form-check.form-check-inline.disabled
+                label.form-check-label
+                  input#inlineRadio3.form-check-input(type='radio', name='inlineRadioOptions', value='option3', disabled='')
+                  |  3
+              .form-check.mt-2
+                input#exampleCheck1.form-check-input(type='checkbox', value='on')
+                label.form-check-label(for='exampleCheck1') Remember me
+              .form-check.disabled
+                label.form-check-label
+                  input.form-check-input(type='checkbox', value='', disabled='')
+                  |  Disabled option
+              button.btn.btn-primary.my-2(type='submit') Submit button
+          .col-md-6.p-3
+            form(method='post', action='')
+              .form-group
+                input.form-control.form-control-sm(type='email', placeholder='Small input', name='email')
+              .form-group
+                input.form-control(type='email', name='email', placeholder='Default input')
+              .form-group
+                input.form-control.form-control-lg(type='text', placeholder='Large input')
+            form.my-3(method='post', action='')
+              .form-group
+                input#disabledTextInput.form-control(type='text', placeholder='Disabled input', disabled='')
+              .form-group
+                input#validationServer01.form-control.is-valid(type='text', placeholder='First name', required='', value='Valid')
+              .form-group
+                input#validationServer01.form-control.is-invalid(type='text', placeholder='First name', required='', value='Invalid')
+                .invalid-feedback Please provide a valid input.
+            form
+              .form-group
+                .form-check
+                  input#exampleCheck1.form-check-input(type='checkbox', value='on')
+                  label.form-check-label(for='exampleCheck1') Checkbox
+    .py-4
+      .container
+        .row
+          .col-md-12
+            h2 Pictures
+            hr
+        .row.text-center
+          .col-md-4
+            img.img-fluid.p-3(src='assets/styleguide/people_1.jpg', alt='Card image')
+          .col-md-4
+            img.img-fluid.rounded-circle.p-3(src='assets/styleguide/people_2.jpg', alt='Card image')
+          .col-md-4
+            img.img-fluid.img-thumbnail.p-3(src='assets/styleguide/people_3.jpg', alt='Card image')
+        .row
+          .col-md-6
+            #carousel-1.carousel.slide.my-3(data-ride='carousel')
+              .carousel-inner(role='listbox')
+                .carousel-item.active
+                  img.d-block.img-fluid(src='assets/styleguide/cover_2.jpg', data-holder-rendered='true')
+                  .carousel-caption
+                    h4 Caption #1
+                    p.mb-0 Paragraph. Lorem ipsum dolor sit 
+                .carousel-item
+                  img.d-block.img-fluid(src='assets/styleguide/cover_3.jpg', data-holder-rendered='true')
+                  .carousel-caption
+                    h4 Caption #2
+                    p.mb-0 Paragraph. Lorem ipsum dolor sit 
+              a.carousel-control-prev(role='#carousel-1', data-slide='prev', href='#carousel-1')
+                span.carousel-control-prev-icon(aria-hidden='true')
+                span.sr-only Previous
+              a.carousel-control-next(role='button', data-slide='next', href='#carousel-1')
+                span.carousel-control-next-icon(aria-hidden='true')
+                span.sr-only Next
+          .col-md-6
+            #carousel-2.carousel.slide.my-3(data-ride='carousel', data-interval='5000')
+              ol.carousel-indicators
+                li.active(data-target='#carousel-2', data-slide-to='0')  
+                li(data-target='#carousel-2', data-slide-to='1')  
+                li(data-target='#carousel-2', data-slide-to='2')  
+              .carousel-inner(role='listbox')
+                .carousel-item.active
+                  img.d-block.img-fluid(src='assets/styleguide/cover_1.jpg', data-holder-rendered='true')
+                  .carousel-caption
+                    p.lead Caption #1
+                .carousel-item
+                  img.d-block.img-fluid(src='assets/styleguide/cover_4.jpg', data-holder-rendered='true')
+                  .carousel-caption
+                    p.lead Caption #2
+    .py-4
+      .container
+        .row
+          .col-12
+            h2 Cards
+            hr.mb-4
+        .row
+          .col-md-4.p-3
+            .card
+              .card-body
+                h5 A Card
+                p.card-text
+                  | Some quick example text to build on the card title and make up the bulk of the card's content.
+            .card.my-4
+              .card-header.bg-primary
+                h5.mb-0.text-center A Card Header
+              .card-body
+                p.card-text
+                  | Some quick example text to build on the card title and make up the bulk of the card's content.
+              .card-footer A Card footer
+          .col-md-4.p-3
+            .bg-primary.card
+              img.img-fluid.rounded-circle.w-75.mx-auto.mt-3(src='assets/styleguide/people_5.jpg', alt='Card image')
+              .card-body
+                h4.card-title Card
+                p.card-text
+                  | Some quick example text to build on the card title and make up the bulk of the card's content.
+          .col-md-4.p-3
+            .card
+              .card-img-overlay.align-items-center.d-flex
+                h4.w-100.text-center.mb-0.text-white
+                  b Card Image Overlay
+              img.img-fluid.w-100.rounded(src='assets/styleguide/people_6.jpg', alt='Card image')
+    .py-5
+      .container
+        .row
+          .col-12
+            h2 Listing
+            hr.mb-4
+        .row
+          .col-md-6.p-3
+            ul.list-group
+              li.list-group-item
+                | List group
+                i.fa.fa-fw.fa-bicycle
+              li.list-group-item.active  Active list item
+              li.list-group-item.disabled Disabled list item
+              a.list-group-item.list-group-item-action(href='#') Link list item
+          .col-md-6.p-3
+            table.table.table-hover.table-striped.table-bordered
+              thead.thead-inverse
+                tr
+                  th(scope='col') #
+                  th(scope='col') Striped table
+                  th(scope='col') bordered
+              tbody
+                tr
+                  th(scope='row') 1
+                  td example
+                  td one
+                tr
+                  th(scope='row') 2
+                  td example
+                  td two
+                tr.bg-info
+                  th(scope='row') 3
+                  td example
+                  td three
+    .pt-5
+      .container
+        .row
+          .col-12
+            h2 Navigation
+            hr.mb-4
+    nav.navbar.navbar-expand-md.navbar-dark.bg-primary
+      .container
+        a.navbar-brand(href='#')
+          b Navbar Primary 
+        button.navbar-toggler.navbar-toggler-right(type='button', data-toggle='collapse', data-target='#navbarPrimarySupportedContent', aria-controls='navbar2SupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+          span.navbar-toggler-icon
+        #navbarPrimarySupportedContent.collapse.navbar-collapse.text-center.justify-content-end
+          ul.navbar-nav
+            li.nav-item
+              a.nav-link(href='#')  Nav item
+          a.btn.navbar-btn.ml-2.btn-secondary(href='#')  Button
+    nav.navbar.navbar-expand-md.navbar-dark.bg-secondary.my-3
+      .container
+        a.navbar-brand(href='#')
+          b Navbar Secondary
+        button.navbar-toggler.navbar-toggler-right(type='button', data-toggle='collapse', data-target='#navbarSecondarySupportedContent', aria-controls='navbar2SupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+          span.navbar-toggler-icon
+        #navbarSecondarySupportedContent.collapse.navbar-collapse.text-center.justify-content-end
+          ul.navbar-nav
+            li.nav-item.mx-2
+              a.nav-link(href='#')
+                i.fa.d-inline.fa-lg.fa-bookmark-o
+          a.btn.navbar-btn.ml-2.text-white.btn-primary(href='#')
+            i.fa.d-inline.fa-lg.fa-user-circle-o.ml-1
+    nav.navbar.navbar-expand-md.my-3.navbar-light.bg-light
+      .container
+        a.navbar-brand(href='#')
+          b Navbar Light
+        button.navbar-toggler.navbar-toggler-right(type='button', data-toggle='collapse', data-target='#navbarLightSupportedContent', aria-controls='navbar2SupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+          span.navbar-toggler-icon
+        #navbarLightSupportedContent.collapse.navbar-collapse.text-center.justify-content-end
+          ul.navbar-nav
+            li.nav-item.mx-1
+              a.nav-link(href='#')
+                i.fa.d-inline.fa-facebook-square
+                |   share
+            li.nav-item.mx-1
+              a.nav-link(href='#')
+                i.fa.d-inline.fa-twitter
+                |   tweet
+            li.nav-item.mx-1
+              a.nav-link(href='#')
+                i.fa.d-inline.fa-pinterest
+                |   pin
+    nav.navbar.navbar-expand-md.my-3.navbar-dark.bg-dark
+      .container
+        a.navbar-brand(href='#')
+          b Navbar Dark
+        button.navbar-toggler.navbar-toggler-right(type='button', data-toggle='collapse', data-target='#navbarDarkSupportedContent', aria-controls='navbar2SupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+          span.navbar-toggler-icon
+        #navbarDarkSupportedContent.collapse.navbar-collapse.text-center.justify-content-end
+          ul.navbar-nav
+          form.form-inline.my-2.my-lg-0
+            input.form-control.mr-sm-2(type='text', placeholder='Search')
+            button.btn.my-2.my-sm-0.btn-primary(type='submit') Search
+    .pt-5
+      .container
+        .row
+          .col-md-12
+            h2 Sections
+            hr.mb-4
+    .py-5.text-center.section-aquamarine(style='background-image: url("assets/styleguide/cover_1.jpg");')
+      .container.py-5
+        .row
+          .col-md-12
+            h1.display-4.mb-0 Aquamarine section
+    .py-5.text-center.section-parallax(style='background-image: url("assets/styleguide/cover_4.jpg");')
+      .container.py-5
+        .row
+          .col-md-6.mx-auto
+            h1.display-4.mb-0.text-white Parallax
+    .py-5.text-center.section-dark(style='background-image: url("assets/styleguide/cover_3.jpg");')
+      .container.py-5
+        .row
+          .col-md-12
+            h1.display-4.mb-0 Dark section
+    .py-5.text-center.section-light(style='background-image: url("assets/styleguide/cover_2.jpg");')
+      .container.py-5
+        .row
+          .col-md-12
+            h1.display-4.mb-0 Light section
+    script(src='http://code.jquery.com/jquery-3.2.1.js', integrity='sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=', crossorigin='anonymous')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js', integrity='sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q', crossorigin='anonymous')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js', integrity='sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl', crossorigin='anonymous')
+    script(src='https://code.jquery.com/jquery-3.3.1.min.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js', integrity='sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49', crossorigin='anonymous')
+    script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js', integrity='sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy', crossorigin='anonymous')

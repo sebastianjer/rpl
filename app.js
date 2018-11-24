@@ -7,7 +7,10 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var loginRouter = require('./routes/login');
+var adminlRouter = require('./routes/adminl');
 var mainRouter = require('./routes/main');
+var orderRouter = require('./routes/pemesanan');
+var confirmRouter = require('./routes/confirm.js');
 
 var app = express();
 
@@ -23,8 +26,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter); //welcome
 app.use('/users', usersRouter); //users
-app.use('/login', loginRouter); //login
+
+app.use('/login', loginRouter); //login mitra
+app.use('/adminl', adminlRouter); //login pusat
+
 app.use('/main', mainRouter); //mainpage
+
+app.use('/order', orderRouter); //pemesanan mitra
+app.use('/confirm', confirmRouter); //konfirmasi pusat
 
 /* -------------------------------------------------------------------- */
 
