@@ -26,12 +26,12 @@ router.get('/', function(req, res, next) {
 router.post('/', function(req, res){
   var today = new Date();
   var order = {
-    "order_id":req.body.order_id;
-    "order_date":today;
-    "status":"pending";
-    "amount":req.body.amount;
-    "material_name":req.body.material_name;
-    "username":req.body.username;
+    "order_id":req.body.order_id,
+    "order_date":today,
+    "status":"pending",
+    "amount":req.body.amount,
+    "material_name":req.body.material_name,
+    "username":req.body.username
   }
 
   connection.query('INSERT INTO pemesanan SET ?',order, function (error, results, fields) {

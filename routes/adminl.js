@@ -1,30 +1,12 @@
 //Restoran pusat
 var express = require('express');
 var router = express.Router();
-
-//connect ke database
-var mysql      = require('mysql');
-var connection = mysql.createConnection({
-  host     : 'localhost',
-  user     : 'root',
-  password : '',
-  database : 'tubesrpl'
-});
-
-connection.connect(function(err){
-  if(!err) {
-    console.log("Database is connected");
-  } else {
-    console.log("Error connecting database");
-  }
-});
+var db = require('./db');
 
 //GET page login
 router.get('/login', function(req,res,next){
   res.render('adminl');
 });
-
-
 
 //POST username dan password
 //register handler
@@ -36,7 +18,7 @@ router.post('/register', function(req,res){
     "password":req.body.password,
   }
   //jangan lupa nama tabel di querynya harus diganti (tabel pusat)
-  connection.query('INSERT INTO centre SET ?',users, function (error, results, fields) {
+  db.query('INSERT INTO centre SET ?',users, function (error, results, fields) {
     if (error) {
       console.log("error ocurred",error);
       res.send({
@@ -58,7 +40,7 @@ router.post('/login', function(req,res){
   var username= req.body.username;
   var password = req.body.password;
   //jangan lupa nama tabel di querynya sama querynya sendiri harus diganti (pusat)
-  connection.query('SELECT * FROM centre WHERE username = ?',[username], function (error, results, fields) {
+  db.query('SELECT * FROM centre WHERE username = ?',[username], function (error, results, fields) {
     if (error) {
       // console.log("error ocurred",error);
       res.send({

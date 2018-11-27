@@ -10,7 +10,8 @@ var loginRouter = require('./routes/login');
 var adminlRouter = require('./routes/adminl');
 var mainRouter = require('./routes/main');
 var orderRouter = require('./routes/pemesanan');
-var confirmRouter = require('./routes/confirm.js');
+var confirmRouter = require('./routes/confirm');
+var historiRouter = require('./routes/histori');
 
 var app = express();
 
@@ -34,6 +35,8 @@ app.use('/main', mainRouter); //mainpage
 
 app.use('/order', orderRouter); //pemesanan mitra
 app.use('/confirm', confirmRouter); //konfirmasi pusat
+
+app.use('/histori', historiRouter); //histori mitra
 
 /* -------------------------------------------------------------------- */
 

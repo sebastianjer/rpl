@@ -1,27 +1,12 @@
 var express = require('express');
 var router = express.Router();
-
-var mysql      = require('mysql');
-var connection = mysql.createConnection({
-  host     : 'localhost',
-  user     : 'root',
-  password : '',
-  database : 'tubesrpl'
-});
-
-connection.connect(function(err){
-  if(!err) {
-    console.log("Database is connected");
-  } else {
-    console.log("Error connecting database");
-  }
-});
+var db = require('./db');
 
 //diterima
 router.post('/accept', function(req,res) {
   var order_id = req.body.order_id;
 
-  connection.query("UPDATE pemesanan SET status = 'diterima' WHERE order_id = ?", [order_id], function(error, results, fields){
+  db.query("UPDATE pemesanan SET status = 'diterima' WHERE order_id = ?", [order_id], function(error, results, fields){
     if (error){
       res.send({
         "code":400,
@@ -38,7 +23,7 @@ router.post('/accept', function(req,res) {
 router.post('/decline', function(req,res) {
   var order_id = req.body.order_id;
 
-  connection.query("UPDATE pemesanan SET status = 'ditolak' WHERE order_id = ?", [order_id], function(error, results, fields){
+  db.query("UPDATE pemesanan SET status = 'ditolak' WHERE order_id = ?", [order_id], function(error, results, fields){
     if (error){
       res.send({
         "code":400,
