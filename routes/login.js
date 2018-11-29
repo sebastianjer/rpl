@@ -44,6 +44,9 @@ router.post('/register', function(req,res){
 router.post('/login', function(req,res){
   var username= req.body.username;
   var password = req.body.password;
+  uname = username;
+  //console.log(uname);
+
   //jangan lupa nama tabel di querynya sama querynya sendiri harus diganti
   db.query('SELECT * FROM partner WHERE username = ?',[username], function (error, results, fields) {
     if (error) {
@@ -56,7 +59,7 @@ router.post('/login', function(req,res){
       // console.log('The solution is: ', results);
       if(results.length >0){
         if(results[0].password == password){
-          res.render('main');
+          res.render('main', {username: uname});
           /*
           res.send({
             "code":200,

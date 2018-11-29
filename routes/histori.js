@@ -1,43 +1,26 @@
 var express = require('express');
 var router = express.Router();
+var db = require('./db');
 
-var mysql      = require('mysql');
-var connection = mysql.createConnection({
-  host     : 'localhost',
-  user     : 'root',
-  password : '',
-  database : 'tubesrpl'
-});
+router.get('/', function(req,res,next){
+  var username = uname;
+  console.log(username);
+  let query = "SELECT * FROM pemesanan WHERE username = '"+username+"'"; // query database to get all the players
 
-connection.connect(function(err){
-  if(!err) {
-    console.log("Database is connected");
-  } else {
-    console.log("Error connecting database");
-  }
-});
-
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  var username = "";
-  connection.query('SELECT * FROM pemesanan WHERE username = ?',[username], function (error, results, fields) {
-    if (error){
-      res.send({
-        "code":400,
-        "failed":"error ocurred"
-      })
-    }else{
-      res.render('historimitra', {
-        order_id: results[0],
-        order_date: results[1],
-        status: results[2],
-        amount: results[3],
-        material_name: results[4],
-        username: results[5]
-      });
-    }
+  // execute query
+  db.query(query, (err, result) => {
+      if (err) {
+          console.log(err);
+          res.redirect('/');
+      }else{
+        res.render('historimitra', {
+            title: "Histori Mitra",
+            historymitras: result
+        });
+      }
+      //console.log(result.length);
+      //console.log(result);
   });
-  //res.render('index', { title: 'Express' );
 });
 
 module.exports = router;

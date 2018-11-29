@@ -6,16 +6,28 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+
 var loginRouter = require('./routes/login');
 var adminlRouter = require('./routes/adminl');
+
 var mainRouter = require('./routes/main');
+var mainAdminRouter = require('./routes/mainadmin');
+
 var orderRouter = require('./routes/pemesanan');
 var confirmRouter = require('./routes/confirm');
+
 var historiRouter = require('./routes/histori');
+var historiPusatRouter = require('./routes/historipusat');
+
 var getHomeMA = require('./routes/manajemenAkun');
 var manageAccountRouter = require('./routes/akun');
 
+var stokRouter = require('./routes/stok');
+
+var logoutRouter = require('./routes/logout');
+
 var app = express();
+global.uname = "";
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -33,16 +45,24 @@ app.use('/users', usersRouter); //users
 app.use('/login', loginRouter); //login mitra
 app.use('/adminl', adminlRouter); //login pusat
 
-app.use('/main', mainRouter); //mainpage
+app.use('/main', mainRouter); //mainpage mitra
+app.use('/mainAdmin', mainAdminRouter); //mainpage pusat
 
 app.use('/order', orderRouter); //pemesanan mitra
 app.use('/confirm', confirmRouter); //konfirmasi pusat
 
 app.use('/histori', historiRouter); //histori mitra
+app.use('/historip', historiPusatRouter); //histori pusat
 
 //manajemen akun
 app.use('/accountList', getHomeMA);
 app.use('/manageAccount', manageAccountRouter);
+
+//app.use('/stok', stokRouter);
+
+app.use('/logout', logoutRouter); //logout
+
+
 
 /* -------------------------------------------------------------------- */
 

@@ -9,12 +9,12 @@ router.get('/', function(req,res,next){
   db.query(query, (err, result) => {
       if (err) {
           res.redirect('/');
+      }else{
+        res.render('manajemenAkun', {
+            title: "Manajemen Akun | List Akun"
+            ,accounts: result
+        });
       }
-      console.log("aaa")
-      res.render('manajemenAkun', {
-          title: "Manajemen Akun | List Akun"
-          ,accounts: result
-      });
       console.log(result.length);
       console.log(result);
   });

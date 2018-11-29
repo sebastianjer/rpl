@@ -1,10 +1,56 @@
 doctype html
 html
   head
-    title Main Page
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    // PAGE settings
+    link(rel='icon', href='https://templates.pingendo.com/assets/Pingendo_favicon.ico')
+    title App Aquamarine - Pingendo template
+    meta(name='description', content='Free Bootstrap 4 Pingendo Aquamarine template made for app and softwares.')
+    meta(name='keywords', content='Pingendo app aquamarine free template bootstrap 4')
+    // CSS dependencies
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css', type='text/css')
+    link(rel='stylesheet', href='/stylesheets/aquamarine.css', type='text/css')
+    // Script: Make my navbar transparent when the document is scrolled to top
+    script(src='/javascripts/firstpage/navbar-ontop.js')
+    // Script: Animated entrance
+    script(src='/javascripts/firstpage/animate-in.js')
   body
-    h1 Welcome ...
-    h2 Menu
-    a(href='/order', role='button') Pemesanan
-    br
-    a(href='/histori', role='button') Histori Pemesanan
+    // Navbar
+    // Cover
+    // Article style section
+    // Features
+    // Features
+    // Carousel reviews
+    // Call to action
+    // Footer
+    // JavaScript dependencies
+    nav.navbar.navbar-dark.bg-dark.sticky-top.d-flex.justify-content-center
+      .container-fluid
+        a.navbar-brand(href='#')
+          i.fa.d-inline.fa-lg.fa-circle
+          b  FRANCHISE-GO
+    .py-5
+      .container
+        .row
+          .col-md-4
+            .list-group
+              a.list-group-item.list-group-item-action.active(href='/main') DASHBOARD
+              a.list-group-item.list-group-item-action(href='/order') PEMESANAN
+              a.list-group-item.list-group-item-action(href='/histori') HISTORY PESANAN
+              a.list-group-item.list-group-item-action(href='/logout') LOG OUT
+          .col-md-8
+            img.img-fluid.d-block.rounded.mx-auto(src='/images/employee.svg', width='200')
+            .row
+              .col-md-12
+                h3.text-center #{username}
+                //h4.text-center ID Mitra
+                //h5.text-center Alamat
+    script(src='https://code.jquery.com/jquery-3.3.1.min.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js', integrity='sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49', crossorigin='anonymous')
+    script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js', integrity='sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy', crossorigin='anonymous')
+    // Script: Smooth scrolling between anchors in the same page
+    script(src='/javascripts/firstpage/smooth-scroll.js')
+    pingendo(onclick="window.open('https://pingendo.com/', '_blank')", style='cursor:pointer;position: fixed;bottom: 20px;right:20px;padding:4px;background-color: #00b0eb;border-radius: 8px; width:220px;display:flex;flex-direction:row;align-items:center;justify-content:center;font-size:14px;color:white')
+      | Made with Pingendo Free  
+      img.d-block(src='https://pingendo.com/site-assets/Pingendo_logo_big.png', alt='Pingendo logo', height='16')

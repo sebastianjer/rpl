@@ -22,23 +22,25 @@ html
                     tr
                       th(scope='col') Order Id
                       th(scope='col') Order Date
+                      th(scope='col') Mitra Name
                       th(scope='col') Material Name
                       th(scope='col') Amount
                       th(scope='col') Status
 
                   tbody
-                    each history in historymitras
+                    each history in historys
                      tr
                       td #{history.order_id}
                       td #{history.order_date}
+                      td #{history.username}
                       td #{history.material_name}
                       td #{history.amount}
                       td #{history.status}
 
-            //form(action="/manageAccount/addAccount", method="GET")
-              //button.btn.btn-primary(type='submit', style="width:100%") Add Account
-            //br
-            form(action="/main", method="GET")
+            form(action="/manageAccount/addAccount", method="GET")
+              button.btn.btn-primary(type='submit', style="width:100%") Add Account
+            br
+            form(action="/accountList", method="GET")
               button.btn.btn-primary(type='submit', style="width:100%") Close
 
     script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js', integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo', crossorigin='anonymous')

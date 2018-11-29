@@ -5,7 +5,7 @@ var db = require('./db');
 
 //GET page login
 router.get('/login', function(req,res,next){
-  res.render('adminl');
+  res.render('LoginAsPusat/adminl');
 });
 
 //POST username dan password
@@ -39,6 +39,8 @@ router.post('/register', function(req,res){
 router.post('/login', function(req,res){
   var username= req.body.username;
   var password = req.body.password;
+  uname = username;
+
   //jangan lupa nama tabel di querynya sama querynya sendiri harus diganti (pusat)
   db.query('SELECT * FROM centre WHERE username = ?',[username], function (error, results, fields) {
     if (error) {
@@ -51,7 +53,7 @@ router.post('/login', function(req,res){
       // console.log('The solution is: ', results);
       if(results.length >0){
         if(results[0].password == password){
-          res.render('mainadmin');
+          res.render('mainadmin', {username: uname});
           /*
           res.send({
             "code":200,
