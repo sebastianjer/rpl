@@ -12,6 +12,8 @@ var mainRouter = require('./routes/main');
 var orderRouter = require('./routes/pemesanan');
 var confirmRouter = require('./routes/confirm');
 var historiRouter = require('./routes/histori');
+var {getHomeMA} = require('./routes/manajemenAkun');
+var {addAccountPage, addAccount, deleteAccount, editPassword, editPasswordPage} = require('./routes/akun');
 
 var app = express();
 
@@ -37,6 +39,14 @@ app.use('/order', orderRouter); //pemesanan mitra
 app.use('/confirm', confirmRouter); //konfirmasi pusat
 
 app.use('/histori', historiRouter); //histori mitra
+
+//manajemen akun
+app.get('/accountList', getHomeMA);
+app.get('/addAccount', addAccountPage);
+app.get('/editPassword/:id', editPasswordPage);
+app.get('/deleteAccount/:id', deleteAccount);
+app.post('/addAcc', addAccount);
+app.post('/editPassword/:id', editPassword);
 
 /* -------------------------------------------------------------------- */
 
