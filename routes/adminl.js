@@ -51,7 +51,7 @@ router.post('/login', function(req,res){
       // console.log('The solution is: ', results);
       if(results.length >0){
         if(results[0].password == password){
-          res.render('/mainadmin');
+          res.render('mainadmin');
           /*
           res.send({
             "code":200,
