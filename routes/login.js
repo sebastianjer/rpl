@@ -6,7 +6,7 @@ var db = require('./db');
 
 //GET page login
 router.get('/login', function(req,res,next){
-  res.render('login');
+  res.render('LoginAsMitra/login');
 });
 
 
