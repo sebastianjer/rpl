@@ -14,10 +14,13 @@ function addData (sql,tabel,res) {
       })
     }else{
       console.log('The solution is: ', results);
-      res.send({
+			res.redirect('/mainadmin')
+      /*
+			res.send({
         "code":200,
         "success":"user registered sucessfully"
-          });
+      });
+			*/
     }
   });
 }
@@ -71,7 +74,7 @@ router.get('/deleteAccount/:id', function(req,res,next){
       if (err) {
         return res.status(500).send(err);
       }
-      res.redirect('/');
+      res.redirect('/accountList');
     });
   });
 });
@@ -91,7 +94,8 @@ router.post('/addAcc', function(req,res){
         return res.status(500).send(err);
       }
       if (result.length > 0) {
-        res.send({
+				res.redirect('/manageAccount/addAcc');
+				console.log({
           "code":2000,
           "failed":"Username already exist"
         })
@@ -107,7 +111,8 @@ router.post('/addAcc', function(req,res){
     });
 
   } else {
-    res.send({
+		res.redirect('/manageAccount/addAcc');
+    console.log({
       "code":1000,
       "failed":"required data is not complete"
     })
@@ -141,18 +146,20 @@ router.post('/editPassword/:id', function(req,res){
             if (err) {
               return res.status(500).send(err);
             }
-            res.redirect('/');
+            res.redirect('/mainadmin');
           });
         });
       } else {
-        res.send({
+				res.redirect('/manageAccount/editPassword/:id');
+				console.log({
           "code":2000,
           "failed":"Input doesn't match current password"
         })
       }
     });
   } else {
-    res.send({
+		res.redirect('/manageAccount/editPassword/:id');
+    console.log({
       "code":1000,
       "failed":"required data is not complete"
     })

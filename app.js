@@ -52,13 +52,13 @@ app.use('/order', orderRouter); //pemesanan mitra
 app.use('/confirm', confirmRouter); //konfirmasi pusat
 
 app.use('/histori', historiRouter); //histori mitra
-app.use('/historip', historiPusatRouter); //histori pusat
+app.use('/historipusat', historiPusatRouter); //histori pusat
 
 //manajemen akun
 app.use('/accountList', getHomeMA);
 app.use('/manageAccount', manageAccountRouter);
 
-//app.use('/stok', stokRouter);
+app.use('/stok', stokRouter);
 
 app.use('/logout', logoutRouter); //logout
 

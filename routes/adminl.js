@@ -62,18 +62,24 @@ router.post('/login', function(req,res){
           */
         }
         else{
+          res.redirect('/adminl/login');
+          /*
           res.send({
             "code":204,
             "success":"Email and password does not match"
           });
+          */
           //res.redirect('/login');
         }
       }
       else{
+        res.redirect('/adminl/login');
+        /*
         res.send({
           "code":204,
           "success":"Email does not exits"
         });
+        */
         //res.redirect('/login');
       }
     }

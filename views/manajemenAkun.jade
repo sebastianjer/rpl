@@ -30,6 +30,7 @@ html
                       td #{account.username}
                       td
                         form(action="/manageAccount/editPassword/"+ "#{account.username}", method="GET")
+                        form(action="/manageAccount/editPassword/"+ "#{account.username}", method="GET")
                             button(type='submit', style="width:80px") Edit
                         form(action="/manageAccount/deleteAccount/"+ "#{account.username}", method="GET")
                             button(type='submit', style="width:80px") Delete

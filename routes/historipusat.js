@@ -8,9 +8,10 @@ router.get('/', function(req,res,next){
   // execute query
   db.query(query, (err, result) => {
       if (err) {
+          console.log(err);
           res.redirect('/');
       }
-      console.log("aaa")
+      console.log("aaa");
       res.render('historipusat', {
           title: "Histori Pusat"
           ,historys: result

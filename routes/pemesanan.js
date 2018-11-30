@@ -1,29 +1,36 @@
 var express = require('express');
 var router = express.Router();
-
-var mysql      = require('mysql');
-var connection = mysql.createConnection({
-  host     : 'localhost',
-  user     : 'root',
-  password : '',
-  database : 'tubesrpl'
-});
-
-connection.connect(function(err){
-  if(!err) {
-    console.log("Database is connected");
-  } else {
-    console.log("Error connecting database");
-  }
-});
+var db = require('./db');
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+/* router.get('/', function(req, res, next) {
   res.render('pemesanan');
   //res.render('index', { title: 'Express' );
+}); */
+
+/* GET data from database */
+router.get('/', function(req,res,next){
+  let query = "SELECT * FROM material"; // query database to get all the players
+
+  // execute query
+  db.query(query, (err, result) => {
+      if (err) {
+          res.redirect('/');
+      }
+      //console.log("aaa")
+      res.render('pemesanan', {
+          title: "Pemesanan Bahan Baku"
+          ,materials: result
+      });
+      console.log(result.length);
+      console.log(result);
+  });
 });
 
-router.post('/', function(req, res){
+module.exports = router;
+
+/* INSERT data into database */
+router.post('/pemesanan', function(req, res){
   var today = new Date();
   var order = {
     "order_id":req.body.order_id,
@@ -31,10 +38,10 @@ router.post('/', function(req, res){
     "status":"pending",
     "amount":req.body.amount,
     "material_name":req.body.material_name,
-    "username":req.body.username
+    "username":uname
   }
 
-  connection.query('INSERT INTO pemesanan SET ?',order, function (error, results, fields) {
+  db.query('INSERT INTO pemesanan SET ?',order, function (error, results, fields) {
     if (error) {
       console.log("error ocurred",error);
       res.send({
@@ -43,12 +50,11 @@ router.post('/', function(req, res){
       })
     }else{
       console.log('The solution is: ', results);
-      res.send({
-        "code":200,
-        "success":"pemesanan berhasil dilakukan"
-          });
+      res.render('main');
+
     }
   });
+
 });
 
 module.exports = router;
